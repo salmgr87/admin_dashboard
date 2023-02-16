@@ -3,53 +3,57 @@
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+
 .main-container {
     display: flex;
-    grid-template-columns: 1fr 1fr;
 }
 
 .left-sidebar {
     display: grid;
-    grid-template-rows: repeat(9,25px);
+    grid-template-rows: repeat(12,25px);
     background-color: lightblue;
-    width: 300px;
+    width: 200px;
     gap: 10px;
-    transition: 0.3s;
+    transition: 0.2s;
+    height: 100vh;
 }
 
 
 .sidebar-text {
-    
-    transition: 2s;
+    transition: 1s;
     visibility: visible;
     color: black;
-}
-
-
-@media only screen and (max-width: 686px) {
-    .left-sidebar {
-        width: 25px;
-        transition: .5s;
-    }
-    .sidebar-text {
-        visibility: hidden;
-        transition: 0.3s;
-        color: rgba(0,0,0,0);
-    }
+    font-size: 20px;
 }
 
 .sidebar-line {
     display: flex;
     align-items: center;
+    
 }
 
 .sidebar-svg {
     height: 25px;
     color: black;
 }
-.sidebar-text {
+
+.dashboard {
     font-size: 25px;
+    
 }
+
+.sidebar-line:hover {
+    background-color: cyan;
+    transition: .3s;
+    cursor: pointer;
+}
+
 
 #search:after {
     content: "hello";
@@ -58,4 +62,27 @@
 
 .right-content {
     grid-area: 1 / 2 / -1/ -1;
+}
+
+
+/* Minimizes the sidebar */
+@media only screen and (max-width: 686px) {
+    .left-sidebar {
+        width: 25px;
+        transition: .3s;
+    }
+    .sidebar-text {
+        visibility: hidden;
+        transition: 0.14s;
+        color: rgba(0,0,0,0);
+    }
+    .sidebar-line:hover {
+        background-color: rgba(0,0,0,0);
+    }
+    .sidebar-svg:hover {
+        background-color:inherit;
+        transition: .3s;
+        cursor: pointer;
+        rotate: 360deg;
+    }
 }
