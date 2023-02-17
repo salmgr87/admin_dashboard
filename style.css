@@ -12,6 +12,7 @@ body {
 
 .main-container {
     display: flex;
+    
 }
 
 .left-sidebar {
@@ -20,8 +21,9 @@ body {
     background-color: lightblue;
     width: 200px;
     gap: 10px;
-    transition: 0.2s;
+    transition: 0.1s;
     height: 100vh;
+    padding: 1.5em 0 0 0;
 }
 
 
@@ -55,15 +57,71 @@ body {
 }
 
 
-#search:after {
-    content: "hello";
-}
-
 
 .right-content {
-    grid-area: 1 / 2 / -1/ -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 110px 1fr;
+    width: calc(100vw - 200px);
+    padding: 1.5em 0 0 0;
+    background-color: lightgray;
+    
 }
 
+.header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 3fr;
+    margin: 0 0 1em 0;
+}
+
+.search-bar {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 0 0 1em;
+}
+
+.search {
+    width: 70%;
+    border: none;
+    box-sizing: border-box;
+    background-color: lavender;
+    border-radius: 50px;
+    padding: 2px;
+    position: relative;
+    left: 10px;
+    height: 25px;
+}
+
+.search-svg {
+    height: 25px;
+    
+    
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    padding: 0.5em 0 0 1em;
+    
+}
+
+.welcome-text {
+
+    padding: 0 0 0 1em;
+ 
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: white;
+}
+
+.projects {
+    background-color: lightyellow;
+}
 
 /* Minimizes the sidebar */
 @media only screen and (max-width: 686px) {
@@ -84,5 +142,9 @@ body {
         transition: .3s;
         cursor: pointer;
         rotate: 360deg;
+    }
+    .right-content {
+        width: calc(100vw - 25px);
+        
     }
 }
