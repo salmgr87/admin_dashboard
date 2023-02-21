@@ -19,7 +19,7 @@ body {
     display: grid;
     grid-template-rows: repeat(12,25px) 1fr;
     background-color: lightblue;
-    width: 200px;
+    width: 170px;
     gap: 10px;
     transition: 0.1s;
     min-height: calc(100vh - 1.5em);
@@ -38,7 +38,7 @@ body {
 .sidebar-line {
     display: flex;
     align-items: center;
-    
+    max-width: max-content;
 }
 
 .sidebar-svg {
@@ -59,9 +59,9 @@ body {
 .right-content {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 150px 1fr;
-    width: calc(100vw - 200px);
-    padding: 1.5em 0 0 0;
+    grid-template-rows: 125px 1fr;
+    width: calc(100vw - 170px);
+    padding: 1em 0 0 0;
     background-color: lightgray;
     
 }
@@ -162,10 +162,10 @@ button {
 .content {
     background-color: lightyellow;
     display: grid;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 20px;
     column-gap: 20px;
-    padding: 1em 0 0 1em;
+    padding: 1em 1em 0 1em;
     
 }
 
@@ -173,7 +173,7 @@ button {
     grid-area: 1 / 1 / 2 / 2;
 }
 
-.announcement-title {
+.announcements-title {
     grid-area: 1 / 2 / 2 / -1;
 }
 
@@ -182,6 +182,7 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
     grid-auto-rows: 180px;
     gap: 20px;
+    grid-area: 2 / 1 / 3 / 2;
 }
 
 .project-card {
@@ -204,9 +205,13 @@ button {
 }
 
 button:hover, .sidebar-line:hover, .content-svg:hover {
-    scale: 1.07;
+    scale: 1.1;
     transition: 0.2s;
     cursor: pointer;
+}
+
+button:active {
+    scale: 1.05;
 }
 
 .card-content {
@@ -224,6 +229,13 @@ button:hover, .sidebar-line:hover, .content-svg:hover {
     height: 20px;
     width: 20px;
 }
+.announcements-trending {
+    grid-area: 2 / 2 / 3 / 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 8% 180px;
+    padding: 0 0 1em 0;
+}
 
 .announcements {
     border: 1px solid black;
@@ -234,7 +246,80 @@ button:hover, .sidebar-line:hover, .content-svg:hover {
     box-sizing: border-box;
     display: grid;
     grid-template-rows: 1fr;
-    
+    grid-area: 1 / 2 / 2 / 3;
+    overflow: scroll;
+}
+
+.announcement-title {
+    font-size: 12px;
+    font-weight: 900;
+    padding: 10px 0 0 0;
+}
+
+.announcement-content {
+    font-size: 10px;
+    text-overflow: ellipsis;
+    padding: 0 0 10px 0;
+}
+
+.trending-title {
+    grid-area: 2 / 2 / 3 / 3;
+    padding: 1em 0 2px 0;
+    align-self: flex-end;
+}
+
+.trending-card {
+    grid-area: 3 / 2 / 4 / 3;
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: lightgray 3px 3px 4px;
+    background-color: white;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    gap: 5px;
+}
+
+
+.trending-element {
+    display: flex;
+    align-items: center;
+}
+
+.trending-img {
+    width: 30px;
+    height: 30px;
+}
+
+.cookie {
+    border: 3px solid cyan;
+    background-color: cyan;
+    border-radius: 100px;
+}
+
+
+.jake {
+    border: 3px solid rgb(207, 173, 240);
+    background-color: rgb(207, 173, 240);
+    border-radius: 100px;
+}
+
+.luigi {
+    border: 3px solid rgb(233, 242, 139);
+    background-color: rgb(233, 242, 139);
+    border-radius: 100px;
+}
+
+.kenny {
+    border: 3px solid rgb(153, 255, 151);
+    background-color: rgb(153, 255, 151);
+    border-radius: 100px;
+}
+
+.trending-user {
+    padding: 0 0 0 1.5em;
+    font-size: 10px;
 }
 
 /* Minimizes the sidebar */
@@ -242,11 +327,15 @@ button:hover, .sidebar-line:hover, .content-svg:hover {
     .left-sidebar {
         width: 35px;
         transition: .3s;
+        
     }
     .sidebar-text {
         visibility: hidden;
         transition: 0.14s;
         color: rgba(0,0,0,0);
+    }
+    .sidebar-line {
+        width: 25px;
     }
     .sidebar-line:hover {
         background-color: rgba(0,0,0,0);
@@ -256,7 +345,6 @@ button:hover, .sidebar-line:hover, .content-svg:hover {
         background-color:inherit;
         transition: .3s;
         cursor: pointer;
-        rotate: 360deg;
     }
     .right-content {
         width: calc(100vw - 25px);
