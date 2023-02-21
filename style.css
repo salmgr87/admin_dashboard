@@ -22,7 +22,7 @@ body {
     width: 200px;
     gap: 10px;
     transition: 0.1s;
-    min-height: 100vh;
+    min-height: calc(100vh - 1.5em);
     padding: 1.5em 0 0 10px;
 }
 
@@ -52,11 +52,7 @@ body {
     
 }
 
-.sidebar-line:hover {
-    background-color: cyan;
-    transition: .3s;
-    cursor: pointer;
-}
+
 
 
 
@@ -170,6 +166,7 @@ button {
     grid-template-rows: 20px;
     column-gap: 20px;
     padding: 1em 0 0 1em;
+    
 }
 
 .project-title {
@@ -183,7 +180,7 @@ button {
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-    grid-auto-rows: 200px;
+    grid-auto-rows: 180px;
     gap: 20px;
 }
 
@@ -206,12 +203,38 @@ button {
     left: 1px;
 }
 
+button:hover, .sidebar-line:hover, .content-svg:hover {
+    scale: 1.07;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
 .card-content {
     font-size: 13px;
 }
 
 .card-links {
     justify-self: right;
+    display: grid;
+    width: 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.content-svg {
+    height: 20px;
+    width: 20px;
+}
+
+.announcements {
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: lightgray 3px 3px 4px;
+    background-color: white;
+    padding: 25px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 1fr;
+    
 }
 
 /* Minimizes the sidebar */
