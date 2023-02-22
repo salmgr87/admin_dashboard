@@ -323,7 +323,7 @@ button:active {
 }
 
 /* Minimizes the sidebar */
-@media only screen and (max-width: 686px) {
+@media only screen and (max-width: 750px) {
     .left-sidebar {
         width: 35px;
         transition: .3s;
